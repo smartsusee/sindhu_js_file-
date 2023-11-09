@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #para {
+        color: red;
+      }
+      .datas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- createElement  -->
+    <!-- creatTextNode  -->
+
+    <!-- append , append child -->
+    <div id="div">hi</div>
+
+    <script>
+      let div = document.getElementById("div");
+
+      let para = document.createElement("p");
+
+      let data = document.createTextNode("susee");
+
+      div.append(para);
+      para.append(data);
+      para.id = "para";
+      para.classList = "datas";
+
+      console.log(para);
+    </script>
+  </body>
+</html>

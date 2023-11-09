@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>sync and async</h1>
+
+    <script>
+      let fun_1 = () => {
+        console.log("hi_1");
+      };
+
+      fun_1();
+
+      let fun_2 = () => {
+        console.log("hi_2");
+      };
+
+      fun_2();
+
+      //    async
+      function timing() {
+        setTimeout(() => {
+          let count = 0;
+          console.log(++count);
+        }, 1000);
+      }
+
+      timing();
+
+      function timing_1() {
+        setTimeout(() => {
+          console.log("timing_1");
+        }, 2000);
+      }
+
+      timing_1();
+
+      // api
+
+      let promise_data = new Promise(function (succ, fail) {
+        let x = 1;
+
+        if (x === 0) {
+          succ("true");
+        } else {
+          fail("false");
+        }
+      });
+
+      promise_data
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // closure
+
+      function closure_data() {
+        a = 10;
+
+        console.log(`data:${a}`);
+
+        return function () {
+          console.log(a);
+        };
+      }
+
+      let find = closure_data();
+
+      //   hoisting  , closure
+    </script>
+  </body>
+</html>

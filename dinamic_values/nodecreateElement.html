@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      #div {
+        margin-left: 200px;
+      }
+
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+
+      table {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>append method</h1>
+
+    <br />
+    <input type="text" id="input" />
+
+    <button onclick="fun()">click btn!</button>
+
+    <br />
+    <br />
+    <br />
+
+    <div id="div">
+      <table>
+        <tr>
+          <th>name</th>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      let fun = () => {
+        let input_value = document.getElementById("input").value;
+        let div = document.getElementById("div");
+        console.log(input_value);
+
+        let table = document.createElement("table");
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        td.append(input_value);
+        tr.append(td);
+        table.append(tr);
+
+        div.append(table);
+        console.log(table);
+      };
+    </script>
+  </body>
+</html>
